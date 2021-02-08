@@ -12,3 +12,10 @@
 	run mantis-ml for the top N diseases, manually selecting for the most interesting ones
 	run on GCP (takes like 2.5 hours for each disease potentially)
 	25 diseases and then see how it compares to disgenet or OT or whatever we go the original source of associations
+
+EDIT: Epilepsy test command results added below
+
+`mantisml -c mantis_ml/conf/Epilepsy_config.yaml -o out/Epilepsy-test -n 10  41970.96s user 6322.86s system 973% cpu 1:22:39.21 total`
+
+
+Resultant data is 743MB on disk, compresses to 119.2MB via `tar -zcvf Epilepsy-test.tar.gz Epilepsy-test/`
