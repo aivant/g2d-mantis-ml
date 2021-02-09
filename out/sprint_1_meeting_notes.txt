@@ -1,0 +1,21 @@
+1. How do we create the config files (automated)?
+2. How does the training vary based on the config file complexity?
+3. Can we extract sample files from disgenet or opentargets data?
+4. Can we run a large scale comparision on the results between these different methods (for a given set of genes and diseases)?
+5. How does this perform on simple vs complex diseases?
+6. How does this work for monogenic diseases? (e.g tay sachs or sickle cell)
+7. How do we automate this for team members / make a wide variety of results available quickly?
+8. Develop a priority list of diseases to run through
+	One potential solution is to look at just our E3s and run this to compare for the most common diseases
+9. 515 E3s : {df of disease associations}
+ 	in each df, take the most highly associated diseases (ones that have the most E3s from the list attached)
+	run mantis-ml for the top N diseases, manually selecting for the most interesting ones
+	run on GCP (takes like 2.5 hours for each disease potentially)
+	25 diseases and then see how it compares to disgenet or OT or whatever we go the original source of associations
+
+EDIT: Epilepsy test command results added below
+
+`mantisml -c mantis_ml/conf/Epilepsy_config.yaml -o out/Epilepsy-test -n 10  41970.96s user 6322.86s system 973% cpu 1:22:39.21 total`
+
+
+Resultant data is 743MB on disk, compresses to 119.2MB via `tar -zcvf Epilepsy-test.tar.gz Epilepsy-test/`

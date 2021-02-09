@@ -15,5 +15,3 @@ dist/
 *.egg
 
 .DS_Store
-
-out/
