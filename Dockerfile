@@ -5,7 +5,7 @@ RUN apt-get -y upgrade
 RUN apt-get -y install tmux
 WORKDIR /mantis_ml
 COPY . .
-RUN python setup.py
+RUN python setup.py install
 CMD ["/bin/bash"]
 
 
