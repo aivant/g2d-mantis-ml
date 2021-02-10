@@ -19,3 +19,11 @@ EDIT: Epilepsy test command results added below
 
 
 Resultant data is 743MB on disk, compresses to 119.2MB via `tar -zcvf Epilepsy-test.tar.gz Epilepsy-test/`
+
+Seed Gene File:
+
+`time mantisml -c mantis_ml/conf/Epilepsy_config.yaml -o out/Epilepsy-test -n 12 -k disgenet_epilepsy.txt` 
+
+Result:
+
+`mantisml -c mantis_ml/conf/Epilepsy_config.yaml -o out/Epilepsy-test -n 12 -k  33261.95s user 4250.50s system 1072% cpu 58:16.22 total`
