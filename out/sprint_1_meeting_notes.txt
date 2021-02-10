@@ -27,3 +27,8 @@ Seed Gene File:
 Result:
 
 `mantisml -c mantis_ml/conf/Epilepsy_config.yaml -o out/Epilepsy-test -n 12 -k  33261.95s user 4250.50s system 1072% cpu 58:16.22 total`
+
+
+No reason not to bypass the config file by providing seed genes
+
+Bypass HPO by doing
