@@ -19,7 +19,7 @@ def _get_diseases(config_path="mantis_ml/conf/", output_path="out/"):
     return list(zip(config_file_list, output_folder_list))
 
 
-def run_mantis(zipped_paths, thread_count=12):
+def run_mantis(zipped_paths, thread_count="12"):
     """
     Runs the mantis call associated with the disease and path
     will take a long time....
@@ -29,17 +29,18 @@ def run_mantis(zipped_paths, thread_count=12):
     """
     process_status_list = []
     for disease in zipped_paths:
+        # try:
+        function_call = [
+            "mantisml",
+            "-c",
+            disease[0],
+            "-o",
+            disease[1],
+            "-n",
+            thread_count,
+        ]
         try:
-            function_call = [
-                "mantisml",
-                "-c",
-                disease[0],
-                "-o",
-                disease[1],
-                "-n",
-                thread_count,
-            ]
-            subprocess.run(function_call)
+            subprocess.run(function_call, stdout=subprocess.DEVNULL)
             process_status_list.append([disease[0], disease[1], "success"])
         except:
             process_status_list.append([disease[0], disease[1], "failure"])
