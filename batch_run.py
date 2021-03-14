@@ -40,7 +40,7 @@ def run_mantis(zipped_paths, thread_count="12"):
             thread_count,
         ]
         try:
-            subprocess.run(function_call, stdout=subprocess.DEVNULL)
+            subprocess.run(function_call)
             process_status_list.append([disease[0], disease[1], "success"])
         except:
             process_status_list.append([disease[0], disease[1], "failure"])
@@ -56,4 +56,4 @@ if __name__ == "__main__":
     """
     zipped_paths = _get_diseases()
     status = run_mantis(zipped_paths)
-    status.to_csv("batch_run_status.csv", index=False)
+    status.to_csv("out/batch_run_status.csv", index=False)
