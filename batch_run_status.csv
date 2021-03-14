@@ -1,3 +1,0 @@
-config_path,output_path,status
-mantis_ml/conf/CKD_config.yaml,out/CKD,success
-mantis_ml/conf/Epilepsy_config.yaml,out/Epilepsy,success
