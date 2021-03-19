@@ -10,7 +10,22 @@
   - [mantisml-profiler](#mantisml-profiler)
   - [mantisml-overlap](#mantisml-overlap)
 
+## VantAI Notes on value to g2d predictive models
 
+- The input is a list of free-text disease/phenotype terms
+- The pipeline uses HPO (Human Phenotype Ontology) to gather disease-associated genes, aka "seed genes," for the input terms
+- Including a file of custom_seed_genes bypasses this HPO pull
+- However, MantisML still requires an input config file of disease terms, so the pipeline cannot be run in an entirely disease-agnostic way
+- E.g. if user provides an input list of E3s to prioritize by disease association, the user must also provide a list of putative disease associations
+- The output is a ranked list of genes associated with the input disease(s)
+- "Novel" genes are defined as "Mantis-ml’s gene predictions without HPO-based annotations for the disease of interest"
+- However, these genes may have disease annotations in other databases such as DisGeNET
+
+
+## VantAI notes on batch run script
+
+- Written and included a batch run script you can use to run multiple diseases at once. It runs all diseases with a config file in the mantis_ml/conf/ folder. 
+- You can run it via `python batch_run.py` from the main project folder
 
 Introduction
 ============
